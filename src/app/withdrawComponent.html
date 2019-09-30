@@ -1,0 +1,35 @@
+
+
+<form class="text-center border border-dark p-5">
+
+    <p class="h4 mb-4">Withdraw Money</p>
+    
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+            
+             <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                      <div class="form-group">
+                            <label for="username">Enter Username:</label>
+                            <input type="text" [(ngModel)]="user.username"           class="form-control" id="username"
+                        name="username" placeholder="Enter your username"           required #username="ngModel">
+                          
+                          <div [hidden]="!username.pristine" class="alert alert-danger">Username is required</div>
+                </div>
+                
+          <label for="amount"> Enter amount to withdraw</label>
+          <input type="text" [(ngModel)]="amount"  name="amount" class="form-control" placeholder="amount"> 
+        
+          
+          <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+            </form>
+    </div>
+    </form>
+    </form>
+    
+    <form>
+        <div *ngIf="status">
+                         <label><b>Your remaining balance is {{balance}}</b> </label>
+                </div>
+        
+        </form>
+    

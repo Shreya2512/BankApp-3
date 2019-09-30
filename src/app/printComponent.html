@@ -1,0 +1,48 @@
+<!-- 
+        <form>
+            <div *ngIf="status">
+    <div class="card my-5">
+            <div class="card-body">
+              <table class="table table-bordered ">
+                <thead class="thead-light">
+                  <tr>
+                     <th scope="col">All Transactions</th>
+                     </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td>{{ transaction }}</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+            </div>
+        </form> -->
+        <div class="card my-5">
+              <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                          <div class="form-group">
+                                <label for="username">Enter Username:</label>
+                                <input type="text" [(ngModel)]="user.username"           class="form-control" id="username"
+                            name="username" placeholder="Enter your username"           required #username="ngModel">
+                              
+                              <div [hidden]="!username.pristine" class="alert alert-danger">Username is required</div>
+        
+        
+        
+        
+                              <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+                    </div>     
+                </form>
+                  </div>
+        </div>
+        <form>
+        
+            <div *ngIf="status">
+                <label><b>Your transaction details {{transaction}}</b> </label>
+            </div>
+        </form>
+        
